@@ -4,7 +4,6 @@ odoo.define('oao_select_city.form', function (require) {
     var ajax = require('web.ajax');
 
     $(document).ready(function () {
-        console.log("TESTETETESTE111")
         $('#country').change(function () {
             var country_id = $(this).val();
             if (country_id) {
