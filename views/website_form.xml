@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo> 
+    <template id="website_form_page" name="Form Page">
+    <t t-call="website.layout">
+        <div id="wrap">
+            <div class="oe_structure">
+                <div class="container">
+                    <h1>Select Country and State</h1>
+                    <form id="country_state_form">
+                        <div class="form-group">
+                            <label for="country">Country:</label>
+                            <select id="country" name="country_id" class="form-control">
+                                <option value="">Select a country</option>
+                                <t t-foreach="request.env['res.country'].search([])" t-as="country">
+                                    <option t-att-value="country.id" t-esc="country.name"/>
+                                </t>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State:</label>
+                            <select id="state" name="state_id" class="form-control">
+                                <option value="">Select a state</option>
+                                
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </t>
+</template> 
+</odoo>
